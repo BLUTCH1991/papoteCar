@@ -3,7 +3,7 @@ package Entities;
 public class City {
 
     private Integer id;
-    private Integer zipCode;
+    private String zipCode;
     private String name;
 
     public City() {
@@ -17,11 +17,11 @@ public class City {
         this.id = id;
     }
 
-    public Integer getZipCode() {
+    public String getZipCode() {
         return zipCode;
     }
 
-    public void setZipCode(Integer zipCode) {
+    public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
     }
 

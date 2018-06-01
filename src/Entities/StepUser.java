@@ -6,6 +6,7 @@ public class StepUser {
     private User user;
     private Step step;
     private Trip trip;
+    private Step stepUserRole;
 
     public StepUser() {
     }
@@ -47,6 +48,14 @@ public class StepUser {
 
     public void setTrip(Trip trip) {
         this.trip = trip;
+    }
+
+    public Step getStepUserRole() {
+        return stepUserRole;
+    }
+
+    public void setStepUserRole(Step stepUserRole) {
+        this.stepUserRole = stepUserRole;
     }
 
     @Override
