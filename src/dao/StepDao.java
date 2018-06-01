@@ -1,33 +1,36 @@
 package dao;
 
-import Entities.User;
+import Entities.Step;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class UserDao implements DaoInterface<User> {
+public class StepDao implements DaoInterface<Step> {
 
     private DaoFactory daoFactory;
 
-    UserDao(DaoFactory daoFactory) {
+    StepDao(DaoFactory daoFactory) {
         this.daoFactory = daoFactory;
     }
 
     @Override
-    public void create(User user){
+    public void create(Step step){
         Connection connexion = null;
         PreparedStatement preparedStatement = null;
 
         try {
             connexion = daoFactory.getConnection();
             preparedStatement = connexion.prepareStatement(
-                    "INSERT INTO user(firstname,lastname,email) " +
-                        "VALUES(?,?,?);");
+                    "INSERT INTO step(trip, city_start, city_end, adress_start, adress_end, date) " +
+                        "VALUES(?,?,?,?,?,?);");
 
-            preparedStatement.setString(1, user.getFirstName());
-            preparedStatement.setString(2, user.getLastName());
-            preparedStatement.setString(3, user.getEmail());
+            preparedStatement.setInt(1, step.getTrip());
+            preparedStatement.setInt(2, step.getCityStart());
+            preparedStatement.setInt(3, step.getCityEnd());
+            preparedStatement.setString(4, step.getAdressStart());
+            preparedStatement.setString(5, step.getAdressEnd());
+            preparedStatement.setString(6, step.getDate().toString());
             preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
@@ -48,7 +51,7 @@ public class UserDao implements DaoInterface<User> {
     }
 
     @Override
-    public User get(int id) {
+    public Step get(int id) {
 
         return null;
     }

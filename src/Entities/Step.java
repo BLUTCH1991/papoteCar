@@ -6,9 +6,9 @@ import java.util.SimpleTimeZone;
 public class Step {
 
     private String id;
-    private Trip trip;
-    private City cityStart;
-    private City cityEnd;
+    private int trip;
+    private int cityStart;
+    private int cityEnd;
     private String adressStart;
     private String adressEnd;
     private SimpleTimeZone date;
@@ -16,7 +16,7 @@ public class Step {
     public Step() {
     }
 
-    public Step(String id, Trip trip, City cityStart, City cityEnd, String adressStart, String adressEnd, SimpleTimeZone date) {
+    public Step(String id, int trip, int cityStart, int cityEnd, String adressStart, String adressEnd, SimpleTimeZone date) {
         this.id = id;
         this.trip = trip;
         this.cityStart = cityStart;
@@ -34,27 +34,27 @@ public class Step {
         this.id = id;
     }
 
-    public Trip getTrip() {
+    public int getTrip() {
         return trip;
     }
 
-    public void setTrip(Trip trip) {
+    public void setTrip(int trip) {
         this.trip = trip;
     }
 
-    public City getCityStart() {
+    public int getCityStart() {
         return cityStart;
     }
 
-    public void setCityStart(City cityStart) {
+    public void setCityStart(int cityStart) {
         this.cityStart = cityStart;
     }
 
-    public City getCityEnd() {
+    public int getCityEnd() {
         return cityEnd;
     }
 
-    public void setCityEnd(City cityEnd) {
+    public void setCityEnd(int cityEnd) {
         this.cityEnd = cityEnd;
     }
 

@@ -1,33 +1,31 @@
 package dao;
 
-import Entities.User;
+import Entities.UserRole;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class UserDao implements DaoInterface<User> {
+public class UserRoleDao implements DaoInterface<UserRole> {
 
     private DaoFactory daoFactory;
 
-    UserDao(DaoFactory daoFactory) {
+    UserRoleDao(DaoFactory daoFactory) {
         this.daoFactory = daoFactory;
     }
 
     @Override
-    public void create(User user){
+    public void create(UserRole userRole){
         Connection connexion = null;
         PreparedStatement preparedStatement = null;
 
         try {
             connexion = daoFactory.getConnection();
             preparedStatement = connexion.prepareStatement(
-                    "INSERT INTO user(firstname,lastname,email) " +
-                        "VALUES(?,?,?);");
+                    "INSERT INTO user_role(name) " +
+                        "VALUES(?);");
 
-            preparedStatement.setString(1, user.getFirstName());
-            preparedStatement.setString(2, user.getLastName());
-            preparedStatement.setString(3, user.getEmail());
+            preparedStatement.setString(1, userRole.getName());
             preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
@@ -48,7 +46,7 @@ public class UserDao implements DaoInterface<User> {
     }
 
     @Override
-    public User get(int id) {
+    public UserRole get(int id) {
 
         return null;
     }

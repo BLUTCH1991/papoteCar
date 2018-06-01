@@ -1,6 +1,6 @@
 package dao;
 
-import beans.User;
+import Entities.User;
 
 public class Test {
 

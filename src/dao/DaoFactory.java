@@ -1,5 +1,7 @@
 package dao;
 
+import Entities.UserRole;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -26,11 +28,6 @@ public class DaoFactory {
         return null;
     }
 
-    /**
-     *
-     * @return
-     * @throws SQLException
-     */
     public Connection getConnection() throws SQLException {
         return DriverManager.getConnection(url, username, password);
     }
@@ -48,4 +45,14 @@ public class DaoFactory {
     public UserDao getUserDao() {
         return new UserDao(this);
     }
+    public TripDao getTripDao(){
+        return new TripDao(this);
+    }
+    public StepDao getStepDao(){
+        return new StepDao(this);
+    }
+    public UserRoleDao getUserRoleDao(){
+        return new UserRoleDao(this);
+    }
+
 }

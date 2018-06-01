@@ -1,7 +1,5 @@
 package dao;
 
-import beans.User;
-
 public interface DaoInterface<T> {
 
     public void create(T object);
