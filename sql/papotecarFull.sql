@@ -20,19 +20,19 @@ USE `papotecar`;
 CREATE TABLE IF NOT EXISTS `city` (
   `city_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
-  `zip_code` int(11) DEFAULT NULL,
+  `zip_code` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`city_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- Listage des données de la table papotecar.city : ~6 rows (environ)
 /*!40000 ALTER TABLE `city` DISABLE KEYS */;
 REPLACE INTO `city` (`city_id`, `name`, `zip_code`) VALUES
-	(1, 'Nantes', 44000),
-	(2, 'Paris', 75000),
-	(3, 'Bordeaux', 33000),
-	(4, 'Toulouse', 31000),
-	(5, 'Rennes', 35000),
-	(6, 'Le Mans', 72000);
+	(1, 'Nantes', '44000'),
+	(2, 'Paris', '75000'),
+	(3, 'Bordeaux', '33000'),
+	(4, 'Toulouse', '31000'),
+	(5, 'Rennes', '35000'),
+	(6, 'Le Mans', '72000');
 /*!40000 ALTER TABLE `city` ENABLE KEYS */;
 
 -- Listage de la structure de la table papotecar. message
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `message` (
   CONSTRAINT `FK_message_user_2` FOREIGN KEY (`receiver_user_id`) REFERENCES `user` (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
--- Listage des données de la table papotecar.message : ~0 rows (environ)
+-- Listage des données de la table papotecar.message : ~10 rows (environ)
 /*!40000 ALTER TABLE `message` DISABLE KEYS */;
 REPLACE INTO `message` (`message_id`, `sender_user_id`, `receiver_user_id`, `trip_id`, `content`, `date`) VALUES
 	(1, 2, 3, 1, 'Rendez vous Cardo les coco', '2018-06-01 11:44:01'),
@@ -86,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `step` (
   CONSTRAINT `FK_step_trip` FOREIGN KEY (`trip_id`) REFERENCES `trip` (`trip_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- Listage des données de la table papotecar.step : ~6 rows (environ)
+-- Listage des données de la table papotecar.step : ~7 rows (environ)
 /*!40000 ALTER TABLE `step` DISABLE KEYS */;
 REPLACE INTO `step` (`step_id`, `trip_id`, `city_start_id`, `city_end_id`, `adress_start`, `adress_end`, `meeting_hour`, `rank`) VALUES
 	(1, 1, 1, 6, 'Rue albert Premier', '12 avenue marechal petain', '2018-06-01 13:09:05', 1),
@@ -113,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `step_user` (
   CONSTRAINT `FK_step_user_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
 
--- Listage des données de la table papotecar.step_user : ~0 rows (environ)
+-- Listage des données de la table papotecar.step_user : ~21 rows (environ)
 /*!40000 ALTER TABLE `step_user` DISABLE KEYS */;
 REPLACE INTO `step_user` (`step_user_id`, `user_id`, `step_id`, `step_user_role_id`) VALUES
 	(1, 2, 1, 1),
