@@ -1,12 +1,13 @@
 package Entities;
 
-import java.util.SimpleTimeZone;
+
+import java.time.LocalDateTime;
 
 public class Trip {
 
-    private String id;
-    private SimpleTimeZone date_start;
-    private SimpleTimeZone date_end;
+    private Integer id;
+    private LocalDateTime date_start;
+    private LocalDateTime date_end;
     private Integer sits;
     private boolean state;
     private City city_start_id;
@@ -17,7 +18,7 @@ public class Trip {
     public Trip() {
     }
 
-    public Trip(String id, SimpleTimeZone date_start, SimpleTimeZone date_end, Integer sits, boolean state, City city_start_id, City city_end_id, String adresse_start, String adresse_end) {
+    public Trip(Integer id, LocalDateTime date_start, LocalDateTime date_end, Integer sits, boolean state, City city_start_id, City city_end_id, String adresse_start, String adresse_end) {
         this.id = id;
         this.date_start = date_start;
         this.date_end = date_end;
@@ -29,27 +30,27 @@ public class Trip {
         this.adresse_end = adresse_end;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public SimpleTimeZone getDate_start() {
+    public LocalDateTime getDate_start() {
         return date_start;
     }
 
-    public void setDate_start(SimpleTimeZone date_start) {
+    public void setDate_start(LocalDateTime date_start) {
         this.date_start = date_start;
     }
 
-    public SimpleTimeZone getDate_end() {
+    public LocalDateTime getDate_end() {
         return date_end;
     }
 
-    public void setDate_end(SimpleTimeZone date_end) {
+    public void setDate_end(LocalDateTime date_end) {
         this.date_end = date_end;
     }
 

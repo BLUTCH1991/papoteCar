@@ -2,22 +2,22 @@ package Entities;
 
 public class StepUserRole {
 
-    private String id;
+    private Integer id;
     private String name;
 
     public StepUserRole() {
     }
 
-    public StepUserRole(String id, String name) {
+    public StepUserRole(Integer id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

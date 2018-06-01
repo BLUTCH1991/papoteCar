@@ -1,20 +1,20 @@
 package Entities;
 
-import java.util.SimpleTimeZone;
+import java.time.LocalDateTime;
 
 public class Message {
 
-    private String id;
+    private Integer id;
     private String content;
     private User senderUser;
     private User receiverUser;
-    private SimpleTimeZone date;
+    private LocalDateTime date;
     private Trip trip;
 
     public Message() {
     }
 
-    public Message(String id, String content, User senderUser, User receiverUser, SimpleTimeZone date, Trip trip) {
+    public Message(Integer id, String content, User senderUser, User receiverUser, LocalDateTime date, Trip trip) {
         this.id = id;
         this.content = content;
         this.senderUser = senderUser;
@@ -23,11 +23,11 @@ public class Message {
         this.trip = trip;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -55,11 +55,11 @@ public class Message {
         this.receiverUser = receiverUser;
     }
 
-    public SimpleTimeZone getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(SimpleTimeZone date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 

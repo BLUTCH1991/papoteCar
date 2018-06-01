@@ -2,7 +2,7 @@ package Entities;
 
 public class StepUser {
 
-    private String id;
+    private Integer id;
     private User user;
     private Step step;
     private Trip trip;
@@ -10,18 +10,18 @@ public class StepUser {
     public StepUser() {
     }
 
-    public StepUser(String id, User user, Step step, Trip trip) {
+    public StepUser(Integer id, User user, Step step, Trip trip) {
         this.id = id;
         this.user = user;
         this.step = step;
         this.trip = trip;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
