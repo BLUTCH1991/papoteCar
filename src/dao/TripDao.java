@@ -22,7 +22,7 @@ public class TripDao implements DaoInterface<Trip> {
         try {
             connexion = daoFactory.getConnection();
             preparedStatement = connexion.prepareStatement(
-                    "INSERT INTO trip(date_start,date_end,sits,state,city_start_id,city_end_id,adresse_start,adresse_end) " +
+                    "INSERT INTO trip(date_start,date_end,sits,state,city_start_id,city_end_id,adress_start,adress_end) " +
                         "VALUES(?,?,?,?,?,?,?,?);");
 
             preparedStatement.setString(1, trip.getDate_start().toString());

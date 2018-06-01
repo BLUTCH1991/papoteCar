@@ -21,6 +21,7 @@ public class UserDao implements DaoInterface<User> {
 
         try {
             connexion = daoFactory.getConnection();
+            /*TODO IMPLEMENTER L ENREGISTREMENT DU PASSWORD*/
             preparedStatement = connexion.prepareStatement(
                     "INSERT INTO user(firstname,lastname,email) " +
                         "VALUES(?,?,?);");

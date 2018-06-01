@@ -22,7 +22,7 @@ public class StepDao implements DaoInterface<Step> {
         try {
             connexion = daoFactory.getConnection();
             preparedStatement = connexion.prepareStatement(
-                    "INSERT INTO step(trip, city_start, city_end, adress_start, adress_end, date) " +
+                    "INSERT INTO step(trip_id, city_start_id, city_end_id, adress_start, adress_end, meeting_hour) " +
                         "VALUES(?,?,?,?,?,?);");
 
             preparedStatement.setInt(1, step.getTrip());

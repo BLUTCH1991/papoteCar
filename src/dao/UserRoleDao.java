@@ -22,7 +22,7 @@ public class UserRoleDao implements DaoInterface<UserRole> {
         try {
             connexion = daoFactory.getConnection();
             preparedStatement = connexion.prepareStatement(
-                    "INSERT INTO user_role(name) " +
+                    "INSERT INTO user_role(role) " +
                         "VALUES(?);");
 
             preparedStatement.setString(1, userRole.getName());
