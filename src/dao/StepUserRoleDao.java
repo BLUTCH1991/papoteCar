@@ -1,33 +1,31 @@
 package dao;
 
-import Entities.City;
-import Entities.City;
+import Entities.StepUserRole;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class CityDao implements DaoInterface<City> {
+public class StepUserRoleDao implements DaoInterface<StepUserRole> {
 
     private DaoFactory daoFactory;
 
-    CityDao(DaoFactory daoFactory) {
+    StepUserRoleDao(DaoFactory daoFactory) {
         this.daoFactory = daoFactory;
     }
 
     @Override
-    public void create(City city){
+    public void create(StepUserRole stepUserRole){
         Connection connexion = null;
         PreparedStatement preparedStatement = null;
 
         try {
             connexion = daoFactory.getConnection();
             preparedStatement = connexion.prepareStatement(
-                    "INSERT INTO city(name,zip_code) " +
-                        "VALUES(?,?);");
+                    "INSERT INTO step_user_role(role) " +
+                        "VALUES(?);");
 
-            preparedStatement.setString(1, city.getName());
-            preparedStatement.setInt(2, city.getZipCode());
+            preparedStatement.setString(1, stepUserRole.getName());
             preparedStatement.executeUpdate();
 
         } catch (SQLException e) {
@@ -48,7 +46,7 @@ public class CityDao implements DaoInterface<City> {
     }
 
     @Override
-    public City get(int id) {
+    public StepUserRole get(int id) {
 
         return null;
     }

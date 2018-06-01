@@ -40,14 +40,26 @@ public class DaoFactory {
         }
     }
 
-    public UserDao getUserDao() {
-        return new UserDao(this);
+    public CityDao getCityDao() {
+        return new CityDao(this);
+    }
+    public MessageDao getMessageDao() {
+        return new MessageDao(this);
+    }
+    public StepDao getStepDao(){
+        return new StepDao(this);
+    }
+    public StepUserDao getStepUserDao(){
+        return new StepUserDao(this);
+    }
+    public StepUserRoleDao getStepUserRoleDao(){
+        return new StepUserRoleDao(this);
     }
     public TripDao getTripDao(){
         return new TripDao(this);
     }
-    public StepDao getStepDao(){
-        return new StepDao(this);
+    public UserDao getUserDao() {
+        return new UserDao(this);
     }
     public UserRoleDao getUserRoleDao(){
         return new UserRoleDao(this);

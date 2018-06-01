@@ -4,13 +4,14 @@ public class StepUser {
 
     private String id;
     private int user;
-    private Step step;
-    private Trip trip;
+    private int step;
+    private int trip;
+    private int stepUserRole;
 
     public StepUser() {
     }
 
-    public StepUser(String id, int user, Step step, Trip trip) {
+    public StepUser(String id, int user, int step, int trip) {
         this.id = id;
         this.user = user;
         this.step = step;
@@ -33,20 +34,28 @@ public class StepUser {
         this.user = user;
     }
 
-    public Step getStep() {
+    public int getStep() {
         return step;
     }
 
-    public void setStep(Step step) {
+    public void setStep(int step) {
         this.step = step;
     }
 
-    public Trip getTrip() {
+    public int getTrip() {
         return trip;
     }
 
-    public void setTrip(Trip trip) {
+    public void setTrip(int trip) {
         this.trip = trip;
+    }
+
+    public int getStepUserRole() {
+        return stepUserRole;
+    }
+
+    public void setStepUserRole(int stepUserRole) {
+        this.stepUserRole = stepUserRole;
     }
 
     @Override
