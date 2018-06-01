@@ -1,20 +1,20 @@
 package Entities;
 
-import java.util.SimpleTimeZone;
+import java.time.LocalDateTime;
 
 public class Message {
 
-    private String id;
+    private Integer id;
     private String content;
-    private int senderUser;
-    private int receiverUser;
-    private SimpleTimeZone date;
-    private int trip;
+    private User senderUser;
+    private User receiverUser;
+    private LocalDateTime date;
+    private Trip trip;
 
     public Message() {
     }
 
-    public Message(String id, String content, int senderUser, int receiverUser, SimpleTimeZone date, int trip) {
+    public Message(Integer id, String content, User senderUser, User receiverUser, LocalDateTime date, Trip trip) {
         this.id = id;
         this.content = content;
         this.senderUser = senderUser;
@@ -23,11 +23,11 @@ public class Message {
         this.trip = trip;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -39,35 +39,35 @@ public class Message {
         this.content = content;
     }
 
-    public int getSenderUser() {
+    public User getSenderUser() {
         return senderUser;
     }
 
-    public void setSenderUser(int senderUser) {
+    public void setSenderUser(User senderUser) {
         this.senderUser = senderUser;
     }
 
-    public int getReceiverUser() {
+    public User getReceiverUser() {
         return receiverUser;
     }
 
-    public void setReceiverUser(int receiverUser) {
+    public void setReceiverUser(User receiverUser) {
         this.receiverUser = receiverUser;
     }
 
-    public SimpleTimeZone getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(SimpleTimeZone date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 
-    public int getTrip() {
+    public Trip getTrip() {
         return trip;
     }
 
-    public void setTrip(int trip) {
+    public void setTrip(Trip trip) {
         this.trip = trip;
     }
 

@@ -25,9 +25,9 @@ public class StepDao implements DaoInterface<Step> {
                     "INSERT INTO step(trip_id, city_start_id, city_end_id, adress_start, adress_end, meeting_hour) " +
                         "VALUES(?,?,?,?,?,?);");
 
-            preparedStatement.setInt(1, step.getTrip());
-            preparedStatement.setInt(2, step.getCityStart());
-            preparedStatement.setInt(3, step.getCityEnd());
+            preparedStatement.setInt(1, step.getTrip().getId());
+            preparedStatement.setInt(2, step.getCityStart().getId());
+            preparedStatement.setInt(3, step.getCityEnd().getId());
             preparedStatement.setString(4, step.getAdressStart());
             preparedStatement.setString(5, step.getAdressEnd());
             preparedStatement.setString(6, step.getDate().toString());

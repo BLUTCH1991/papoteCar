@@ -1,55 +1,56 @@
 package Entities;
 
-import java.util.SimpleTimeZone;
+
+import java.time.LocalDateTime;
 
 public class Trip {
 
-    private String id;
-    private SimpleTimeZone date_start;
-    private SimpleTimeZone date_end;
+    private Integer id;
+    private LocalDateTime date_start;
+    private LocalDateTime date_end;
     private Integer sits;
     private boolean state;
-    private int city_start_id;
-    private int city_end_id;
+    private City cityStartId;
+    private City cityEndId;
     private String adresse_start;
     private String adresse_end;
 
     public Trip() {
     }
 
-    public Trip(String id, SimpleTimeZone date_start, SimpleTimeZone date_end, Integer sits, boolean state, int city_start_id, int city_end_id, String adresse_start, String adresse_end) {
+    public Trip(Integer id, LocalDateTime date_start, LocalDateTime date_end, Integer sits, boolean state, City city_start_id, City city_end_id, String adresse_start, String adresse_end) {
         this.id = id;
         this.date_start = date_start;
         this.date_end = date_end;
         this.sits = sits;
         this.state = state;
-        this.city_start_id = city_start_id;
-        this.city_end_id = city_end_id;
+        this.cityStartId = city_start_id;
+        this.cityEndId = city_end_id;
         this.adresse_start = adresse_start;
         this.adresse_end = adresse_end;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public SimpleTimeZone getDate_start() {
+    public LocalDateTime getDate_start() {
         return date_start;
     }
 
-    public void setDate_start(SimpleTimeZone date_start) {
+    public void setDate_start(LocalDateTime date_start) {
         this.date_start = date_start;
     }
 
-    public SimpleTimeZone getDate_end() {
+    public LocalDateTime getDate_end() {
         return date_end;
     }
 
-    public void setDate_end(SimpleTimeZone date_end) {
+    public void setDate_end(LocalDateTime date_end) {
         this.date_end = date_end;
     }
 
@@ -69,20 +70,20 @@ public class Trip {
         this.state = state;
     }
 
-    public int getCity_start_id() {
-        return city_start_id;
+    public City getCityStartId() {
+        return cityStartId;
     }
 
-    public void setCity_start_id(int city_start_id) {
-        this.city_start_id = city_start_id;
+    public void setCityStartId(City cityStartId) {
+        this.cityStartId = cityStartId;
     }
 
-    public int getCity_end_id() {
-        return city_end_id;
+    public City getCityEndId() {
+        return cityEndId;
     }
 
-    public void setCity_end_id(int city_end_id) {
-        this.city_end_id = city_end_id;
+    public void setCityEndId(City cityEndId) {
+        this.cityEndId = cityEndId;
     }
 
     public String getAdresse_start() {
@@ -109,8 +110,8 @@ public class Trip {
                 ", date_end=" + date_end +
                 ", sits=" + sits +
                 ", state=" + state +
-                ", city_start_id=" + city_start_id +
-                ", city_end_id=" + city_end_id +
+                ", cityStartId=" + cityStartId +
+                ", cityEndId=" + cityEndId +
                 ", adresse_start='" + adresse_start + '\'' +
                 ", adresse_end='" + adresse_end + '\'' +
                 '}';

@@ -2,59 +2,59 @@ package Entities;
 
 public class StepUser {
 
-    private String id;
-    private int user;
-    private int step;
-    private int trip;
-    private int stepUserRole;
+    private Integer id;
+    private User user;
+    private Step step;
+    private Trip trip;
+    private Step stepUserRole;
 
     public StepUser() {
     }
 
-    public StepUser(String id, int user, int step, int trip) {
+    public StepUser(Integer id, User user, Step step, Trip trip) {
         this.id = id;
         this.user = user;
         this.step = step;
         this.trip = trip;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public int getUser() {
+    public User getUser() {
         return user;
     }
 
-    public void setUser(int user) {
+    public void setUser(User user) {
         this.user = user;
     }
 
-    public int getStep() {
+    public Step getStep() {
         return step;
     }
 
-    public void setStep(int step) {
+    public void setStep(Step step) {
         this.step = step;
     }
 
-    public int getTrip() {
+    public Trip getTrip() {
         return trip;
     }
 
-    public void setTrip(int trip) {
+    public void setTrip(Trip trip) {
         this.trip = trip;
     }
 
-    public int getStepUserRole() {
+    public Step getStepUserRole() {
         return stepUserRole;
     }
 
-    public void setStepUserRole(int stepUserRole) {
+    public void setStepUserRole(Step stepUserRole) {
         this.stepUserRole = stepUserRole;
     }
 

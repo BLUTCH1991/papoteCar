@@ -53,18 +53,18 @@ CREATE TABLE IF NOT EXISTS `message` (
 CREATE TABLE IF NOT EXISTS `step` (
   `step_id` int(11) NOT NULL AUTO_INCREMENT,
   `trip_id` int(11) NOT NULL,
-  `city_start_id` int(11) NOT NULL,
-  `city_end_id` int(11) NOT NULL,
+  `cityStartId` int(11) NOT NULL,
+  `cityEndId` int(11) NOT NULL,
   `adress_start` varchar(50) DEFAULT NULL,
   `adress_end` varchar(50) DEFAULT NULL,
   `meeting_hour` datetime NOT NULL,
   `rank` int(11) DEFAULT NULL,
   PRIMARY KEY (`step_id`),
   KEY `FK_step_trip` (`trip_id`),
-  KEY `FK_step_city` (`city_start_id`),
-  KEY `FK_step_city_2` (`city_end_id`),
-  CONSTRAINT `FK_step_city` FOREIGN KEY (`city_start_id`) REFERENCES `city` (`city_id`),
-  CONSTRAINT `FK_step_city_2` FOREIGN KEY (`city_end_id`) REFERENCES `city` (`city_id`),
+  KEY `FK_step_city` (`cityStartId`),
+  KEY `FK_step_city_2` (`cityEndId`),
+  CONSTRAINT `FK_step_city` FOREIGN KEY (`cityStartId`) REFERENCES `city` (`city_id`),
+  CONSTRAINT `FK_step_city_2` FOREIGN KEY (`cityEndId`) REFERENCES `city` (`city_id`),
   CONSTRAINT `FK_step_trip` FOREIGN KEY (`trip_id`) REFERENCES `trip` (`trip_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -105,8 +105,8 @@ CREATE TABLE IF NOT EXISTS `step_user_role` (
 -- Listage de la structure de la table papotecar. trip
 CREATE TABLE IF NOT EXISTS `trip` (
   `trip_id` int(11) NOT NULL AUTO_INCREMENT,
-  `city_start_id` int(11) NOT NULL,
-  `city_end_id` int(11) NOT NULL,
+  `cityStartId` int(11) NOT NULL,
+  `cityEndId` int(11) NOT NULL,
   `date_start` datetime NOT NULL,
   `date_end` datetime NOT NULL,
   `adress_end` varchar(50) DEFAULT NULL,
@@ -114,10 +114,10 @@ CREATE TABLE IF NOT EXISTS `trip` (
   `sits` int(11) NOT NULL,
   `state` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`trip_id`),
-  KEY `FK_trip_city` (`city_start_id`),
-  KEY `FK_trip_city_2` (`city_end_id`),
-  CONSTRAINT `FK_trip_city` FOREIGN KEY (`city_start_id`) REFERENCES `city` (`city_id`),
-  CONSTRAINT `FK_trip_city_2` FOREIGN KEY (`city_end_id`) REFERENCES `city` (`city_id`)
+  KEY `FK_trip_city` (`cityStartId`),
+  KEY `FK_trip_city_2` (`cityEndId`),
+  CONSTRAINT `FK_trip_city` FOREIGN KEY (`cityStartId`) REFERENCES `city` (`city_id`),
+  CONSTRAINT `FK_trip_city_2` FOREIGN KEY (`cityEndId`) REFERENCES `city` (`city_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Listage des données de la table papotecar.trip : ~0 rows (environ)

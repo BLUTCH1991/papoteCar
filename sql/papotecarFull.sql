@@ -71,24 +71,24 @@ REPLACE INTO `message` (`message_id`, `sender_user_id`, `receiver_user_id`, `tri
 CREATE TABLE IF NOT EXISTS `step` (
   `step_id` int(11) NOT NULL AUTO_INCREMENT,
   `trip_id` int(11) NOT NULL,
-  `city_start_id` int(11) NOT NULL,
-  `city_end_id` int(11) NOT NULL,
+  `cityStartId` int(11) NOT NULL,
+  `cityEndId` int(11) NOT NULL,
   `adress_start` varchar(50) DEFAULT NULL,
   `adress_end` varchar(50) DEFAULT NULL,
   `meeting_hour` datetime NOT NULL,
   `rank` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`step_id`),
   KEY `FK_step_trip` (`trip_id`),
-  KEY `FK_step_city` (`city_start_id`),
-  KEY `FK_step_city_2` (`city_end_id`),
-  CONSTRAINT `FK_step_city` FOREIGN KEY (`city_start_id`) REFERENCES `city` (`city_id`),
-  CONSTRAINT `FK_step_city_2` FOREIGN KEY (`city_end_id`) REFERENCES `city` (`city_id`),
+  KEY `FK_step_city` (`cityStartId`),
+  KEY `FK_step_city_2` (`cityEndId`),
+  CONSTRAINT `FK_step_city` FOREIGN KEY (`cityStartId`) REFERENCES `city` (`city_id`),
+  CONSTRAINT `FK_step_city_2` FOREIGN KEY (`cityEndId`) REFERENCES `city` (`city_id`),
   CONSTRAINT `FK_step_trip` FOREIGN KEY (`trip_id`) REFERENCES `trip` (`trip_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- Listage des données de la table papotecar.step : ~7 rows (environ)
 /*!40000 ALTER TABLE `step` DISABLE KEYS */;
-REPLACE INTO `step` (`step_id`, `trip_id`, `city_start_id`, `city_end_id`, `adress_start`, `adress_end`, `meeting_hour`, `rank`) VALUES
+REPLACE INTO `step` (`step_id`, `trip_id`, `cityStartId`, `cityEndId`, `adress_start`, `adress_end`, `meeting_hour`, `rank`) VALUES
 	(1, 1, 1, 6, 'Rue albert Premier', '12 avenue marechal petain', '2018-06-01 13:09:05', 1),
 	(2, 1, 6, 2, '12 avenue marechal petain', 'Tour Eiffel', '2018-06-01 15:09:05', 2),
 	(3, 2, 5, 1, 'Place Jean Macé', 'Rue de Tabior', '2018-07-04 10:18:47', 1),
@@ -156,8 +156,8 @@ REPLACE INTO `step_user_role` (`step_user_role_id`, `role`) VALUES
 -- Listage de la structure de la table papotecar. trip
 CREATE TABLE IF NOT EXISTS `trip` (
   `trip_id` int(11) NOT NULL AUTO_INCREMENT,
-  `city_start_id` int(11) NOT NULL,
-  `city_end_id` int(11) NOT NULL,
+  `cityStartId` int(11) NOT NULL,
+  `cityEndId` int(11) NOT NULL,
   `date_start` datetime NOT NULL,
   `date_end` datetime NOT NULL,
   `adress_end` varchar(50) DEFAULT NULL,
@@ -165,15 +165,15 @@ CREATE TABLE IF NOT EXISTS `trip` (
   `sits` int(11) NOT NULL,
   `state` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`trip_id`),
-  KEY `FK_trip_city` (`city_start_id`),
-  KEY `FK_trip_city_2` (`city_end_id`),
-  CONSTRAINT `FK_trip_city` FOREIGN KEY (`city_start_id`) REFERENCES `city` (`city_id`),
-  CONSTRAINT `FK_trip_city_2` FOREIGN KEY (`city_end_id`) REFERENCES `city` (`city_id`)
+  KEY `FK_trip_city` (`cityStartId`),
+  KEY `FK_trip_city_2` (`cityEndId`),
+  CONSTRAINT `FK_trip_city` FOREIGN KEY (`cityStartId`) REFERENCES `city` (`city_id`),
+  CONSTRAINT `FK_trip_city_2` FOREIGN KEY (`cityEndId`) REFERENCES `city` (`city_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- Listage des données de la table papotecar.trip : ~3 rows (environ)
 /*!40000 ALTER TABLE `trip` DISABLE KEYS */;
-REPLACE INTO `trip` (`trip_id`, `city_start_id`, `city_end_id`, `date_start`, `date_end`, `adress_end`, `adress_start`, `sits`, `state`) VALUES
+REPLACE INTO `trip` (`trip_id`, `cityStartId`, `cityEndId`, `date_start`, `date_end`, `adress_end`, `adress_start`, `sits`, `state`) VALUES
 	(1, 1, 2, '2018-06-01 11:09:05', '2018-06-01 15:09:08', NULL, NULL, 4, 0),
 	(2, 5, 4, '2018-07-04 09:18:47', '2018-07-04 17:18:47', NULL, NULL, 7, 0),
 	(3, 3, 2, '2018-06-01 11:11:43', '2018-06-01 17:11:46', NULL, NULL, 2, 1);

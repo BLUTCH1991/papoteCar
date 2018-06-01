@@ -2,26 +2,26 @@ package Entities;
 
 public class City {
 
-    private String id;
-    private Integer zipCode;
+    private Integer id;
+    private String zipCode;
     private String name;
 
     public City() {
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public Integer getZipCode() {
+    public String getZipCode() {
         return zipCode;
     }
 
-    public void setZipCode(Integer zipCode) {
+    public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
     }
 

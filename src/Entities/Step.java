@@ -1,22 +1,21 @@
 package Entities;
 
-import java.text.SimpleDateFormat;
-import java.util.SimpleTimeZone;
+import java.time.LocalDateTime;
 
 public class Step {
 
-    private String id;
-    private int trip;
-    private int cityStart;
-    private int cityEnd;
+    private Integer id;
+    private Trip trip;
+    private City cityStart;
+    private City cityEnd;
     private String adressStart;
     private String adressEnd;
-    private SimpleTimeZone date;
+    private LocalDateTime date;
 
     public Step() {
     }
 
-    public Step(String id, int trip, int cityStart, int cityEnd, String adressStart, String adressEnd, SimpleTimeZone date) {
+    public Step(Integer id, Trip trip, City cityStart, City cityEnd, String adressStart, String adressEnd, LocalDateTime date) {
         this.id = id;
         this.trip = trip;
         this.cityStart = cityStart;
@@ -26,35 +25,35 @@ public class Step {
         this.date = date;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public int getTrip() {
+    public Trip getTrip() {
         return trip;
     }
 
-    public void setTrip(int trip) {
+    public void setTrip(Trip trip) {
         this.trip = trip;
     }
 
-    public int getCityStart() {
+    public City getCityStart() {
         return cityStart;
     }
 
-    public void setCityStart(int cityStart) {
+    public void setCityStart(City cityStart) {
         this.cityStart = cityStart;
     }
 
-    public int getCityEnd() {
+    public City getCityEnd() {
         return cityEnd;
     }
 
-    public void setCityEnd(int cityEnd) {
+    public void setCityEnd(City cityEnd) {
         this.cityEnd = cityEnd;
     }
 
@@ -74,11 +73,11 @@ public class Step {
         this.adressEnd = adressEnd;
     }
 
-    public SimpleTimeZone getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(SimpleTimeZone date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 
