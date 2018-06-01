@@ -25,8 +25,8 @@ public class StepUserDao implements DaoInterface<StepUser> {
                     "INSERT INTO step_user(user_id,step_id,step_user_role_id) " +
                         "VALUES(?,?,?);");
 
-            preparedStatement.setInt(1, stepUser.getUser());
-            preparedStatement.setInt(2, stepUser.getStep());
+            preparedStatement.setInt(1, stepUser.getUser().getId());
+            preparedStatement.setInt(2, stepUser.getStep().getId());
             preparedStatement.executeUpdate();
 
         } catch (SQLException e) {

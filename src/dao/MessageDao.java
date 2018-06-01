@@ -25,9 +25,9 @@ public class MessageDao implements DaoInterface<Message> {
                     "INSERT INTO message(sender_user_id, receiver_user_id, trip_id, content, date) " +
                         "VALUES(?,?,?,?,?);");
 
-            preparedStatement.setInt(1, message.getSenderUser());
-            preparedStatement.setInt(2, message.getReceiverUser());
-            preparedStatement.setInt(3, message.getTrip());
+            preparedStatement.setInt(1, message.getSenderUser().getId());
+            preparedStatement.setInt(2, message.getReceiverUser().getId());
+            preparedStatement.setInt(3, message.getTrip().getId());
             preparedStatement.setString(4, message.getContent());
             preparedStatement.setString(5, message.getDate().toString());
 

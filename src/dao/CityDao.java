@@ -27,7 +27,7 @@ public class CityDao implements DaoInterface<City> {
                         "VALUES(?,?);");
 
             preparedStatement.setString(1, city.getName());
-            preparedStatement.setInt(2, city.getZipCode());
+            preparedStatement.setString(2, city.getZipCode());
             preparedStatement.executeUpdate();
 
         } catch (SQLException e) {

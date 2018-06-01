@@ -29,8 +29,8 @@ public class TripDao implements DaoInterface<Trip> {
             preparedStatement.setString(2, trip.getDate_end().toString());
             preparedStatement.setInt(3, trip.getSits());
             preparedStatement.setBoolean(4, trip.isState());
-            preparedStatement.setInt(5, trip.getCity_start_id());
-            preparedStatement.setInt(6, trip.getCity_end_id());
+            preparedStatement.setInt(5, trip.getCityStartId().getId());
+            preparedStatement.setInt(6, trip.getCityEndId().getId());
             preparedStatement.setString(7, trip.getAdresse_start());
             preparedStatement.setString(8, trip.getAdresse_end());
             preparedStatement.executeUpdate();

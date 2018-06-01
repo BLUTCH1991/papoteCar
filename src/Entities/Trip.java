@@ -10,8 +10,8 @@ public class Trip {
     private LocalDateTime date_end;
     private Integer sits;
     private boolean state;
-    private City city_start_id;
-    private City city_end_id;
+    private City cityStartId;
+    private City cityEndId;
     private String adresse_start;
     private String adresse_end;
 
@@ -24,8 +24,8 @@ public class Trip {
         this.date_end = date_end;
         this.sits = sits;
         this.state = state;
-        this.city_start_id = city_start_id;
-        this.city_end_id = city_end_id;
+        this.cityStartId = city_start_id;
+        this.cityEndId = city_end_id;
         this.adresse_start = adresse_start;
         this.adresse_end = adresse_end;
     }
@@ -70,20 +70,20 @@ public class Trip {
         this.state = state;
     }
 
-    public City getCity_start_id() {
-        return city_start_id;
+    public City getCityStartId() {
+        return cityStartId;
     }
 
-    public void setCity_start_id(City city_start_id) {
-        this.city_start_id = city_start_id;
+    public void setCityStartId(City cityStartId) {
+        this.cityStartId = cityStartId;
     }
 
-    public City getCity_end_id() {
-        return city_end_id;
+    public City getCityEndId() {
+        return cityEndId;
     }
 
-    public void setCity_end_id(City city_end_id) {
-        this.city_end_id = city_end_id;
+    public void setCityEndId(City cityEndId) {
+        this.cityEndId = cityEndId;
     }
 
     public String getAdresse_start() {
@@ -110,8 +110,8 @@ public class Trip {
                 ", date_end=" + date_end +
                 ", sits=" + sits +
                 ", state=" + state +
-                ", city_start_id=" + city_start_id +
-                ", city_end_id=" + city_end_id +
+                ", cityStartId=" + cityStartId +
+                ", cityEndId=" + cityEndId +
                 ", adresse_start='" + adresse_start + '\'' +
                 ", adresse_end='" + adresse_end + '\'' +
                 '}';
