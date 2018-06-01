@@ -6,15 +6,15 @@ public class Message {
 
     private String id;
     private String content;
-    private User senderUser;
-    private User receiverUser;
+    private int senderUser;
+    private int receiverUser;
     private SimpleTimeZone date;
-    private Trip trip;
+    private int trip;
 
     public Message() {
     }
 
-    public Message(String id, String content, User senderUser, User receiverUser, SimpleTimeZone date, Trip trip) {
+    public Message(String id, String content, int senderUser, int receiverUser, SimpleTimeZone date, int trip) {
         this.id = id;
         this.content = content;
         this.senderUser = senderUser;
@@ -39,19 +39,19 @@ public class Message {
         this.content = content;
     }
 
-    public User getSenderUser() {
+    public int getSenderUser() {
         return senderUser;
     }
 
-    public void setSenderUser(User senderUser) {
+    public void setSenderUser(int senderUser) {
         this.senderUser = senderUser;
     }
 
-    public User getReceiverUser() {
+    public int getReceiverUser() {
         return receiverUser;
     }
 
-    public void setReceiverUser(User receiverUser) {
+    public void setReceiverUser(int receiverUser) {
         this.receiverUser = receiverUser;
     }
 
@@ -63,11 +63,11 @@ public class Message {
         this.date = date;
     }
 
-    public Trip getTrip() {
+    public int getTrip() {
         return trip;
     }
 
-    public void setTrip(Trip trip) {
+    public void setTrip(int trip) {
         this.trip = trip;
     }
 
